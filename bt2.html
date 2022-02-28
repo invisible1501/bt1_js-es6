@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const animal = [
+            {
+                id: 1,
+                type: 'bird',
+                name: 'bird1'
+            },
+            {
+                id: 2,
+                type: 'tiger',
+                name: 'tiger1'
+            },
+            {   
+                id: 3,
+                type: 'snake',
+                name: 'snake1'
+            },
+        ]
+
+        animal.set = (type, name) => {
+            const NewAnimal = {
+                id: animal.length,
+                type: type,
+                name: name
+            }
+            animal.push(NewAnimal);
+        }
+
+        animal.get = (type) => {
+            arrAnimal = animal.filter(animal => animal.type == type);
+            if(arrAnimal.length == 0) console.log(`${type} chưa có trong mảng`);
+            else console.log(`${type} đã có trong mảng`);
+        }
+
+        animal.dlt = (type) => {
+            arrAnimal = animal.filter(animal => animal.type == type);
+            animal.splice(arrAnimal[0].id - 1, 1);
+        }
+
+        animal.print = () => {
+            const arrAnimal = animal.map(animal => ({
+                id: animal.id,
+                type: animal.type 
+            }))
+
+            console.log(arrAnimal);
+        }
+
+    </script>
+</body>
+</html>
